@@ -10,48 +10,84 @@
 	<script src="pixelate.auto.min.js"></script>
 </head>
 <body>
-	<div class="container text-center">
-		<div class="row">
-			<div class="col-xs-12">
-				<h1>Pixelate.js demonstration</h1>
-				<p>Initialized via data attributes:</p>
-				<pre style="display: flex; justify-content: center;"><code class="html" style="flex: 0 0 auto; ">&lt;img src="http://i.imgur.com/sAtUHoB.jpg" alt="http://imgur.com/gallery/zjJAc" class="img-fluid"
-     data-pixelate data-value="0.25" data-reveal_on_hover="true" data-reveal_on_click="true" /></code></pre>
-			</div>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>Pixelate.js demonstration</h1>
 		</div>
-		<div class="row">
-			<div class="col-xs-12 col-md-6 col-md-offset-3">
-				<img src="http://i.imgur.com/sAtUHoB.jpg" alt="http://imgur.com/gallery/zjJAc" class="img-fluid"
+	</div>
+	<div class="row">
+		<div class="col-sm-12 col-lg-6">
+			<div class="card">
+				<div class="card-block">
+					<h4 class="card-title">Data attributes</h4>
+					<h6 class="card-subtitle text-muted">Pixelate.js initialized on image via data attributes</h6>
+				</div>
+				<img src="http://i.imgur.com/sAtUHoB.jpg" alt="http://imgur.com/gallery/zjJAc" class="card-img-top img-fluid"
 					 data-pixelate data-value="0.25" data-reveal_on_hover="true" data-reveal_on_click="true" />
+				<pre class="m-b-0"><code class="html">&lt;img src="http://i.imgur.com/sAtUHoB.jpg"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-pixelate
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-value="0.25"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-reveal_on_hover="true"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-reveal_on_click="true" /></code></pre>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-xs-12">
-				<p>Initialized via javascript:</p>
-					<pre style="display: flex; justify-content: center;"><code class="javascript" style="flex: 0 0 auto; ">document.getElementById('myimg').pixelate({value: 0.25, reveal_on_hover: true, reveal_on_click: true})</code></pre>
+		<div class="col-sm-12 col-lg-6">
+			<div class="card">
+				<div class="card-block">
+					<h4 class="card-title">JavaScript invocation</h4>
+					<h6 class="card-subtitle text-muted">Pixelate.js initialized on image via method of element</h6>
+				</div>
+				<img src="http://i.imgur.com/sAtUHoB.jpg" alt="http://imgur.com/gallery/zjJAc" class="img-fluid" id="myimg"
+					 onload="this.pixelate({value: 0.25, reveal_on_hover: true, reveal_on_click: true});" />
+				<pre class="m-b-0"><code class="javascript">document.getElementById('myimg').pixelate({
+	value: 0.25,
+	reveal_on_hover: true,
+	reveal_on_click: true
+})</code></pre>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-xs-12 col-md-6 col-md-offset-3">
-				<img src="http://i.imgur.com/sAtUHoB.jpg" alt="http://imgur.com/gallery/zjJAc" class="img-fluid" id="myimg" onload="this.pixelate({value: 0.25, reveal_on_hover: true, reveal_on_click: true});" />
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-12">
-				<p>Initialized automatically:</p>
-					<pre style="display: flex; justify-content: center;"><code class="html" style="flex: 0 0 auto; ">&lt;script src="pixelate.auto.min.js">&lt;/script></code></pre>
-					<pre style="display: flex; justify-content: center;"><code class="javascript" style="flex: 0 0 auto; ">PixelateAuto({value: 0.1, reveal_on_hover: true, reveal_on_click: true});</code></pre>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-12 col-md-6 col-md-offset-3">
+		<div class="col-sm-12 col-lg-6">
+			<div class="card">
+				<div class="card-block">
+					<h4 class="card-title">Automate</h4>
+					<h6 class="card-subtitle text-muted">Pixelate.js initialized on all new images appearing in DOM</h6>
+				</div>
 				<img src="http://i.imgur.com/sAtUHoB.jpg" alt="http://imgur.com/gallery/zjJAc" class="img-fluid" />
+				<pre class="m-b-0"><code class="html">&lt;script src="pixelate.auto.min.js">&lt;/script>
+&lt;script>
+	PixelateAuto({
+		value: 0.1,
+		reveal_on_hover: true,
+		reveal_on_click: true
+	});
+&lt;/script></code></pre>
+			</div>
+		</div>
+		<div class="col-sm-12 col-lg-6">
+			<div class="card">
+				<div class="card-block">
+					<h4 class="card-title">Video</h4>
+					<h6 class="card-subtitle text-muted">Pixelate.js works with videos too!</h6>
+				</div>
+				<video preload="auto" autoplay="autoplay" muted="muted" loop="loop"
+					   data-pixelate data-reveal_on_hover="true">
+					<source src="//i.imgur.com/BAUDFBX.webm" type="video/webm">
+					<source src="//i.imgur.com/BAUDFBX.mp4" type="video/mp4">
+				</video>
+				<pre class="m-b-0"><code class="html">&lt;video preload="auto" autoplay="autoplay" muted="muted" loop="loop"
+       data-pixelate
+       data-reveal_on_hover="true">
+	&lt;source src="//i.imgur.com/BAUDFBX.webm" type="video/webm">
+	&lt;source src="//i.imgur.com/BAUDFBX.mp4" type="video/mp4">
+&lt;/video></code></pre>
 			</div>
 		</div>
 	</div>
-	<script>
-		hljs.initHighlightingOnLoad();
-		PixelateAuto({value: 0.1, reveal_on_hover: true, reveal_on_click: true});
-	</script>
+</div>
+<script>
+	hljs.initHighlightingOnLoad();
+	PixelateAuto({value: 0.1, reveal_on_hover: true, reveal_on_click: true});
+</script>
 </body>
 </html>
