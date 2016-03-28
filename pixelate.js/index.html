@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/dracula.min.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
 	<script src="pixelate.min.js"></script>
+	<script src="pixelate.auto.min.js"></script>
 </head>
 <body>
 	<div class="container text-center">
@@ -27,15 +28,30 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<p>Initialized via javascript:</p>
-					<pre style="display: flex; justify-content: center;"><code class="javascript" style="flex: 0 0 auto; ">document.getElementById('myimg').pixelate({value: 0.1, reveal_on_hover: true, reveal_on_click: true})</code></pre>
+					<pre style="display: flex; justify-content: center;"><code class="javascript" style="flex: 0 0 auto; ">document.getElementById('myimg').pixelate({value: 0.25, reveal_on_hover: true, reveal_on_click: true})</code></pre>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-12 col-md-6 col-md-offset-3">
-				<img src="http://i.imgur.com/sAtUHoB.jpg" alt="http://imgur.com/gallery/zjJAc" class="img-fluid" id="myimg" onload="document.getElementById('myimg').pixelate({value: 0.25, reveal_on_hover: true, reveal_on_click: true})" />
+				<img src="http://i.imgur.com/sAtUHoB.jpg" alt="http://imgur.com/gallery/zjJAc" class="img-fluid" id="myimg" onload="this.pixelate({value: 0.25, reveal_on_hover: true, reveal_on_click: true});" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<p>Initialized automatically:</p>
+					<pre style="display: flex; justify-content: center;"><code class="html" style="flex: 0 0 auto; ">&lt;script src="pixelate.auto.min.js">&lt;/script></code></pre>
+					<pre style="display: flex; justify-content: center;"><code class="javascript" style="flex: 0 0 auto; ">PixelateAuto({value: 0.1, reveal_on_hover: true, reveal_on_click: true});</code></pre>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-6 col-md-offset-3">
+				<img src="http://i.imgur.com/sAtUHoB.jpg" alt="http://imgur.com/gallery/zjJAc" class="img-fluid" />
 			</div>
 		</div>
 	</div>
-	<script>hljs.initHighlightingOnLoad();</script>
+	<script>
+		hljs.initHighlightingOnLoad();
+		PixelateAuto({value: 0.1, reveal_on_hover: true, reveal_on_click: true});
+	</script>
 </body>
 </html>
